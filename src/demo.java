@@ -12,7 +12,10 @@ public class demo {
 		Boolean[] bBus = { true, false, true, true };
 		MicroInstruction test = new MicroInstruction(nextAddress, jam, alu, cBus, mem, bBus);
 		System.out.println(Arrays.toString(test.getAlu()));
-		System.out.println(test.toString());
+		
+		ControlStore controlStore = new ControlStore();
+		controlStore.getControlStore1().put("ADD", test);
+		System.out.println(controlStore.getControlStore1().get("ADD").toString());
 	}
 
 }
